@@ -1,0 +1,26 @@
+schema {
+	query: Query
+	mutation: Mutation
+}
+
+type Query {
+	getEvent(id: ID!): Event
+}
+
+
+type Event {
+	id: ID!
+	name: String
+	where: String
+	when: String
+	description: String
+}
+
+type Mutation {
+	createEvent(
+		name: String!,
+		when: String!,
+		where: String!,
+		description: String!
+	): Event
+}
